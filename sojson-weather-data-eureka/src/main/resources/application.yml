@@ -1,0 +1,26 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: sojson-weather-data-eureka
+  redis:
+    host: 192.168.56.10
+    database: 0
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-idle: 8
+        max-active: 8
+        min-idle: 0
+        max-wait: -1ms
+    timeout: 3000
+
+eureka:
+  port: 8080
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lx</groupId>
+    <artifactId>sojson-weather-spring-cloud</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <!-- boot版本号 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- 属性 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+    </properties>
+
+    <!-- 子模块 -->
+    <modules>
+        <module>eureka-server</module>
+        <module>sojson-weather-collection-server</module>
+        <module>sojson-weather-collection-eureka-feign</module>
+        <module>sojson-weather-data-eureka</module>
+        <module>sojson-weather-report-eureka-feign</module>
+        <module>sojson-weather-city-eureka</module>
+        <module>sojson-weather-eureka-client-zuul</module>
+        <module>sojson-weather-report-eureka-feign-gateway</module>
+        <module>sojson-weather-config-server</module>
+        <module>sojson-weather-config-client</module>
+        <module>sojson-weather-eureka-client-feign-hystrix</module>
+    </modules>
+
+
+</project>

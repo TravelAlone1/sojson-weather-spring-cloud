@@ -1,0 +1,13 @@
+server:
+  port: 8084
+
+eureka:
+  port: 8080
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
+spring:
+  application:
+    name: sojson-weather-city-eureka

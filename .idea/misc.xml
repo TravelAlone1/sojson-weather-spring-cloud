@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-collection-server/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-data-server/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-report-server/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-city-server/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-collection-eureka-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-eureka-client-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-report-eureka-feign-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-config-client/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-eureka-client-feign-hystrix/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

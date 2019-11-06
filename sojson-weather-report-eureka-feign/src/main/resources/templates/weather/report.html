@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>天气预报</title>
+</head>
+<body>
+<!--统一布局（将原有的全放在里面）-->
+<div class="container">
+    <!--  里面内容只占一行  -->
+    <div class="row">
+        <h3 th:text="${title}">主题</h3>
+        <select class="custom-select" id="selectCityId">
+            <option th:each="city : ${cityList}"
+                    th:value="${city.cityCode}"
+                    th:text="${city.cityName}"
+                    th:selected="${city.id eq cityId}"></option>
+        </select>
+    </div>
+
+    <div class="row">
+        <h1 class="text-success" th:text="${report.cityInfo.city}">深圳</h1>
+    </div>
+    <div class="row">
+        <p>
+            湿度：<span th:text="${report.data.shidu}"></span>
+        </p>
+    </div>
+    <div class="row">
+        <p>
+            PM25：<span th:text="${report.data.pm25}"></span>
+        </p>
+    </div>
+    <div class="row">
+        <p>
+            空气质量：<span th:text="${report.data.quality}"></span>
+        </p>
+    </div>
+    <div class="row">
+        <!--起到卡片的作用-->
+        <div class="card border-info" th:each="forecast : ${report.data.forecast}">
+            <div class="card-body text-info">
+                <p class="card-text" th:text="${forecast.week}">星期几</p>
+                <p class="card-text" th:text="${forecast.ymd}">日</p>
+                <p class="card-text" th:text="${forecast.high}">最高温</p>
+                <p class="card-text" th:text="${forecast.low}">最低温</p>
+                <p class="card-text" th:text="${forecast.notice}">注意事项</p>
+                <p class="card-text" th:text="${forecast.fx}">风向</p>
+                <p class="card-text" th:text="${forecast.type}">天气类型</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" th:src="@{/js/weather/report.js}"></script>
+</body>
+</html>

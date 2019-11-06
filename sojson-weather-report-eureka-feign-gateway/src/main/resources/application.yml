@@ -1,0 +1,24 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: sojson-weather-report-eureka-feign-gateway
+  thymeleaf:
+    # 文件路径
+    prefix: classpath:/templates/
+    # 编码
+    encoding: UTF-8
+    # 是否缓存，热部署静态文件
+    cache: false
+    # 后缀
+    suffix: .html
+    # 使用不严谨的html5，默认HTML5  legacyhtml5
+    mode: LEGACYHTML5
+
+eureka:
+  port: 8080
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
