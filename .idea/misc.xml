@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/sojson-weather-config-server/pom.xml" />
         <option value="$PROJECT_DIR$/sojson-weather-config-client/pom.xml" />
         <option value="$PROJECT_DIR$/sojson-weather-eureka-client-feign-hystrix/pom.xml" />
+        <option value="$PROJECT_DIR$/sojson-weather-eureka-client-gateway/pom.xml" />
       </list>
     </option>
   </component>

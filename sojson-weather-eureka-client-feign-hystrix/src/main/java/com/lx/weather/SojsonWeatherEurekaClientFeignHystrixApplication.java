@@ -9,12 +9,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@SpringBootApplication(scanBasePackages = "com.lx.weather.service.impl")
+@ComponentScan(basePackages = {"com.lx.weather.*"})
+@SpringBootApplication//(scanBasePackages = "com.lx.weather.service.impl")
 @EnableDiscoveryClient
 @EnableFeignClients
 public class SojsonWeatherEurekaClientFeignHystrixApplication {

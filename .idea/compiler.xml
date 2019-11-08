@@ -7,12 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="sojson-weather-report-eureka-feign" />
-        <module name="sojson-weather-config-server" />
+        <module name="eureka-server" />
         <module name="sojson-weather-config-client" />
+        <module name="sojson-weather-config-server" />
         <module name="sojson-weather-data-eureka" />
         <module name="sojson-weather-eureka-client-zuul" />
-        <module name="eureka-server" />
-        <module name="sojson-weather-report-server" />
+        <module name="sojson-weather-eureka-client-gateway" />
         <module name="sojson-weather-eureka-client-feign-hystrix" />
         <module name="sojson-weather-collection-eureka-feign" />
         <module name="sojson-weather-collection-server" />
@@ -35,10 +35,10 @@
       <module name="sojson-weather-data-eureka" options="-parameters" />
       <module name="sojson-weather-eureka" options="-parameters" />
       <module name="sojson-weather-eureka-client-feign-hystrix" options="-parameters" />
+      <module name="sojson-weather-eureka-client-gateway" options="-parameters" />
       <module name="sojson-weather-eureka-client-zuul" options="-parameters" />
       <module name="sojson-weather-report-eureka-feign" options="-parameters" />
       <module name="sojson-weather-report-eureka-feign-gateway" options="-parameters" />
-      <module name="sojson-weather-report-server" options="-parameters" />
       <module name="sojson-weather-spring-cloud" options="-parameters" />
     </option>
   </component>

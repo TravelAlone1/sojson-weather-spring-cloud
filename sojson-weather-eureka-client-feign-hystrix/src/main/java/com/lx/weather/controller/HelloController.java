@@ -7,8 +7,10 @@ import com.lx.weather.service.EurekaCclientService;
 import com.lx.weather.vo.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,11 +22,11 @@ import java.util.List;
  *
  * @create: 2019-11-05 20:42
  **/
-@RestController
-@RequestMapping
+@Controller
+@RequestMapping("/test")
 public class HelloController {
 
-    //@Qualifier("sojson-weather-city-eureka")
+    @Qualifier("sojson-weather-city-eureka")
     @Autowired
     private EurekaCclientService eurekaCclientService;
 
@@ -34,11 +36,13 @@ public class HelloController {
 //    }
 
     @GetMapping("/hello")
+    @ResponseBody
     public String hello(String name){
         return eurekaCclientService.hello(name);
     }
 
     @GetMapping("/index")
+    @ResponseBody
     public String index(){
         return "spring boot +++++++";
     }

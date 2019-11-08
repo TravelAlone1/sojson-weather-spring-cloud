@@ -1,5 +1,6 @@
 package com.lx.weather.service;
 
+import com.lx.weather.service.impl.DataClientHystrix;
 import com.lx.weather.vo.City;
 import com.lx.weather.vo.Weather;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -12,7 +13,7 @@ import java.util.List;
  * @Author: lx
  * @Date: 2019/11/4 10:31
  */
-@FeignClient("sojson-weather-eureka-client-zuul")
+@FeignClient(name = "sojson-weather-eureka-client-zuul",fallback = DataClientHystrix.class)
 public interface DataClient {
 
     /**

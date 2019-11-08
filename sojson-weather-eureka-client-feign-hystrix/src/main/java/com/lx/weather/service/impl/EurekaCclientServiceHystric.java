@@ -29,6 +29,6 @@ public class EurekaCclientServiceHystric implements EurekaCclientService  {
 
     @Override
     public String hello(String name) {
-        return "调用eureka-client服务异常:调用" + name;
+        return "调用sojson-weather-city-eureka服务异常:调用" + name;
     }
 }

@@ -17,42 +17,52 @@
             <option th:each="city : ${cityList}"
                     th:value="${city.cityCode}"
                     th:text="${city.cityName}"
-                    th:selected="${city.id eq cityId}"></option>
+                    th:selected="${city.cityCode ==cityId}"></option>
         </select>
     </div>
-
-    <div class="row">
-        <h1 class="text-success" th:text="${report.cityInfo.city}">深圳</h1>
-    </div>
-    <div class="row">
-        <p>
-            湿度：<span th:text="${report.data.shidu}"></span>
-        </p>
-    </div>
-    <div class="row">
-        <p>
-            PM25：<span th:text="${report.data.pm25}"></span>
-        </p>
-    </div>
-    <div class="row">
-        <p>
-            空气质量：<span th:text="${report.data.quality}"></span>
-        </p>
-    </div>
-    <div class="row">
-        <!--起到卡片的作用-->
-        <div class="card border-info" th:each="forecast : ${report.data.forecast}">
-            <div class="card-body text-info">
-                <p class="card-text" th:text="${forecast.week}">星期几</p>
-                <p class="card-text" th:text="${forecast.ymd}">日</p>
-                <p class="card-text" th:text="${forecast.high}">最高温</p>
-                <p class="card-text" th:text="${forecast.low}">最低温</p>
-                <p class="card-text" th:text="${forecast.notice}">注意事项</p>
-                <p class="card-text" th:text="${forecast.fx}">风向</p>
-                <p class="card-text" th:text="${forecast.type}">天气类型</p>
+    <div th:if="${report}!=null">
+        <div class="row">
+            <h1 class="text-success" th:text="${report.cityInfo.city}">深圳</h1>
+        </div>
+        <div class="row">
+            <p>
+                湿度：<span th:text="${report.data.shidu}"></span>
+            </p>
+        </div>
+        <div class="row">
+            <p>
+                PM25：<span th:text="${report.data.pm25}"></span>
+            </p>
+        </div>
+        <div class="row">
+            <p>
+                空气质量：<span th:text="${report.data.quality}"></span>
+            </p>
+        </div>
+        <div class="row">
+            <!--起到卡片的作用-->
+            <div class="card border-info" th:each="forecast : ${report.data.forecast}">
+                <div class="card-body text-info">
+                    <p class="card-text" th:text="${forecast.week}">星期几</p>
+                    <p class="card-text" th:text="${forecast.ymd}">日</p>
+                    <p class="card-text" th:text="${forecast.high}">最高温</p>
+                    <p class="card-text" th:text="${forecast.low}">最低温</p>
+                    <p class="card-text" th:text="${forecast.notice}">注意事项</p>
+                    <p class="card-text" th:text="${forecast.fx}">风向</p>
+                    <p class="card-text" th:text="${forecast.type}">天气类型</p>
+                </div>
             </div>
         </div>
     </div>
+    <div th:if="${report}==null">
+        <div class="row">
+            <p>
+                天气数据API服务暂不可用
+            </p>
+        </div>
+    </div>
+
+
 </div>
 
 <!-- Optional JavaScript -->
